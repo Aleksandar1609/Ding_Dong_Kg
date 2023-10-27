@@ -1,0 +1,499 @@
+body {
+  background: #fff;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
+
+
+
+.main-div, .loggedin-div {
+  width: 60%;
+  margin: 0px auto;
+  margin-top: 150px;
+  padding-left:550px;
+  display: none;
+}
+
+.main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+.main-div button, .loggedin-div button {
+  background: #1C2321;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 30%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div button:hover, .loggedin-div button:hover {
+  background: #fff;
+  color: #1C2321;
+  border: 1px solid #1C2321;
+  cursor: pointer;
+}
+
+
+  #content_container{
+    background-color:#1C2321  ;
+    width:100%;
+    margin: auto;
+    display:inline-block;
+    padding-bottom:50px;
+    position:absolute;
+    left:50%;
+    transform: translate(-50%, 5%);
+  }
+
+  #finish_task_header{
+    margin:auto;
+    background-color:#1C2321;
+    color:white;
+    width:100%;
+    height:70px;
+    font-size:60px;
+    font-family:monospace;
+    text-align:center;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+  }
+
+  #task_input_container{
+    background-color:#fff;
+    margin:10px auto;
+    height:120px;
+    width:90%;
+    margin-bottom: 60px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+  }
+
+  #input_box{
+    width:60%;
+    float:left;
+    height:50px;
+    background-color:none;
+    border:none;
+    border-bottom:2px solid #293241;
+    text-align:center;
+    font-family:monospace;
+    font-weight:bold;
+    font-size:15px;
+    border-right:0.2px solid #293241;
+    transition: 0.3s;
+  }
+
+  #input_box:focus{
+    border-bottom:4px solid #293241;
+    outline:none;
+  }
+
+  #input_date {
+    width:40%;
+    float:left;
+    height:50px;
+    background-color:none;
+    border:none;
+    border-bottom:2px solid #293241;
+    text-align:center;
+    font-family:monospace;
+    font-weight:bold;
+    font-size:15px;
+    padding: 0;
+    transition: 0.3s;
+   }
+
+   #input_date:focus{
+    border-bottom:4px solid #2c786c;
+    outline:none;
+  }
+
+  ::-webkit-datetime-edit-fields-wrapper {
+    background: white; margin-left: 50px;
+  }
+  ::-webkit-datetime-edit-text {
+    color: red; padding: 0 0.3em;
+  }
+  ::-webkit-datetime-edit-month-field {
+    color: black; font-family:monospace;
+  }
+  ::-webkit-datetime-edit-day-field {
+    color: black; font-family:monospace;
+  }
+  ::-webkit-datetime-edit-year-field {
+    color: black; font-family:monospace;
+  }
+  ::-webkit-inner-spin-button {
+    display: none;
+  }
+  ::-webkit-calendar-picker-indicator {
+      opacity: 1;
+      display: block;
+      float: left;
+      margin-right: 50px;
+      color:#fa163f;
+      width: 15.5px;
+      height: 12.5px;
+  }
+
+  #input_button{
+    width:60%;
+    float:left;
+    margin-left:20%;
+    margin-top: 20px;
+    background-color: #fff;
+    height:40px;
+    color:#1C2321;
+    cursor:pointer;
+    outline:none;
+    text-align:center;
+    font-family:monospace;
+    font-size: 17px;
+    text-align: center;
+    border: 2px solid #5E6572;
+    border-radius: 5px;
+  }
+
+  #input_button:hover{
+    background-color: #5E6572;
+    color:white;
+  }
+
+  #input_button:active{
+    transform: translateY(4px);
+  }
+
+  .header{
+    float:left;
+    margin-left: 5%;
+    background-color:#5E6572;
+    color:white;
+    text-align:center;
+    font-family:monospace;
+    font-weight:bold;
+    font-size:15px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:20px;
+    padding-right:20px;
+    box-shadow: 0px 5px #1C2321;
+  }
+
+  .container{
+    float:left;
+    margin-left: 5%;
+    margin-bottom: 40px;
+    background-color:#5E6572;
+    width:90%;
+    height:500px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+  }
+
+  .task_container{
+
+    background-color:#fff;
+    width: 80%;
+    height:140px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .task_container:hover{
+    box-shadow: -2px 2px #4d4646;
+  }
+
+  #task_data{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin-left: 10px;
+  }
+  #task_tool{
+    display: inline-block;
+    float: right;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #task_done_button{
+    float:right;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+    background-color:#5E6572;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    margin-right: 5px;
+  }
+
+  #task_done_button:hover{
+    background-color:#1C2321;
+    color:white;
+  }
+
+  #task_done_button:active{
+    transform: translateY(4px);
+  }
+
+  #task_edit_button{
+    float:right;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+    background-color:#5E6572;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    margin-right: 5px;
+  }
+
+  #task_edit_button_editing{
+    float:right;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+    background-color:#5E6572;
+    color: white;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    margin-right: 5px;
+  }
+  #task_edit_button:hover{
+    background-color:#1C2321;
+    color:white;
+  }
+  #task_edit_button:active{
+    transform: translateY(4px);
+  }
+
+  #task_delete_button{
+    float:right;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+    background-color:#5E6572;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    margin-right: 5px;
+  }
+
+  #task_delete_button:hover{
+    background-color:#1C2321;
+    color:white;
+  }
+
+  #task_delete_button:active{
+    transform: translateY(4px);
+  }
+
+  #task_title{
+    background-color:#fff;
+    font-family:monospace;
+    font-weight:bold;
+    font-size:15px;
+    float: left;
+    width:100%;
+  }
+
+  #title_editing{
+    background-color:#fff;
+    font-family:monospace;
+    font-weight:bold;
+    font-size:15px;
+    float: left;
+    width:100%;
+    border-bottom: 1px solid #5E6572;
+    outline: none;
+  }
+
+  #title_editing:focus{
+    border-bottom: 3px solid #5E6572;
+
+  }
+
+  #date_editing{
+    background-color:#fff;
+    font-family:monospace;
+    font-weight:lighter;
+    font-size:12px;
+    float: left;
+    width:100%;
+    border-bottom: 1px solid #5E6572;
+    outline: none;
+  }
+
+  #date_editing:focus{
+    border-bottom: 3px solid #5E6572;
+
+  }
+
+  #task_date{
+    background-color:#fff;
+    font-family:monospace;
+    color:grey;
+    font-size:12px;
+    float: left;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+     background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+     background: #888;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+     background: #555;
+  }
+  #map{
+    height:450px;
+    width:100%;
+  }
+  .container1{
+    float:left;
+    margin-left: 5%;
+    margin-bottom: 40px;
+    background-color:#5E6572;
+    width:90%;
+    height:300px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+  }
+
+  .task_container1{
+    background-color:#fff;
+    width: 90%;
+    height:150px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .task_container1:hover{
+    box-shadow: -2px 2px #4d4646;
+  }
+
+  #task_data1{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin-left: 10px;
+  }
+  .task{
+    color: black;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+.lista
+{
+      float: right;
+      margin: 10px;
+      margin-left: 20px;
+}
+.lista1
+{
+      float: right;
+      margin: 10px;
+      margin-left: 20px;
+}
+
+#task_ulica
+ {
+   float:right;
+   margin-right: 10px;
+
+ }
+ #task_korisnik
+  {
+    float:right;
+    margin-right: 10px;
+  }
+  #task_broj
+   {
+     float:left;
+     margin-right: 10px;
+   }
+   #task_naselje
+{
+      float:left;
+      margin-right: 10px;
+}
+#task_vreme{
+  float: right;
+  margin-right: 10px;
+}
+
+#vreme
+{
+  width: 250px;
+}
+#task_brojtelefon
+{
+  float: left;
+  margin-right: 10px;
+}
+#task_ime
+{
+  display: none;
+}
+#task_sprat
+{
+  display: none;
+}
+#task_stan
+{
+  display: none;
+}
+#task_interfon
+{
+  display: none;
+}
+#task_vremeporudzbine
+{
+  float: right;
+  margin-right: 10px;
+}
+#task_napomena
+{
+  float: left;
+  margin-right: 10px;
+}
