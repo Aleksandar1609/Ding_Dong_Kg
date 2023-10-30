@@ -141,7 +141,7 @@ function logout(){
        vremeporudzbine.setAttribute('id', 'task_vremeporudzbine');
        vremeporudzbine.setAttribute('contenteditable', false);
        vremeporudzbine.innerHTML = task_vremeporudzbine;
-       // TASK TOOLS
+
        task_tool = document.createElement('div');
        task_tool.setAttribute('id', 'task_tool');
 
@@ -150,9 +150,21 @@ function logout(){
        task_done_button.setAttribute('onclick', "task_done(this.parentElement.parentElement, this.parentElement)");
        fa_done = document.createElement('i');
        fa_done.setAttribute('class', 'fa fa-check');
+      
+       zona1_button = document.createElement('button');
+       zona1_button.setAttribute('onclick', "task_zona1(this.parentElement.parentElement, this.parentElement)");
+       fa_one = document.createElement('i');
+       fa_one.innerHTML="Zona 1";
+    
+       zona2_button = document.createElement('button');
+       zona2_button.setAttribute('onclick', "task_zona2(this.parentElement.parentElement, this.parentElement)");
+       fa_two = document.createElement('i');
+       fa_two.innerHTML="Zona 2";
 
-
-
+       zona3_button = document.createElement('button');
+       zona3_button.setAttribute('onclick', "task_zona2(this.parentElement.parentElement, this.parentElement)");
+       fa_three = document.createElement('i');
+       fa_three.innerHTML="Zona 3";
 
 
        unfinished_task_container.append(task_container);
@@ -170,12 +182,14 @@ function logout(){
        task_data.append(vreme);
       task_data.append(vremeporudzbine);
        task_container.append(task_tool);
+       task_tool.append(zona1_button);
+       task_tool.append(zona2_button);
+       task_tool.append(zona3_button);
+       zona1_button.append(fa_one);
+       zona2_button.append(fa_two);
+       zona3_button.append(fa_three);
        task_tool.append(task_done_button);
        task_done_button.append(fa_done);
-
-
-
-
 
      }
 
