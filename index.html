@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>Call Centar</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
@@ -7,92 +8,93 @@
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJL7YLRwpM4RTtfoHN1cjGpi2O4KpogzI
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJL7YLRwpM4RTtfoHN1cjGpi2O4KpogzI
  &callback=initMap&libraries=&v=weekly" async defer>
 </script>
 </head>
 
 <body onload="create_unfinished_task(), addDrivers()">
   <div id="login_div" class="main-div">
-      <img src="dingdong.jpg"  width="317" height="280" >
+    <img src="dingdong.jpg" width="317" height="280">
     <h3>Call centar Login</h3>
-    <input type="email"style="width:400px" placeholder="Email..." id="email_field" />
-    <input type="password"style="width:400px" placeholder="Password..." id="password_field" />
+    <input type="email" style="width:400px" placeholder="Email..." id="email_field" />
+    <input type="password" style="width:400px" placeholder="Password..." id="password_field" />
     <button onclick="login()">Login</button>
   </div>
 
-  <div id="user_div" class="loggedin-div" >
+  <div id="user_div" class="loggedin-div">
     <div class="inputDiv"></div>
-      <a href="settings.html"class="settingsButton">Podesavanja</a>
-      <br>
-      <br>
-      <br>
-      <img src="dingdong.jpg"  width="317" height="280" >
-      <h1>Call centar</h1>
-      <input type="text" id="broj" value="Broj Porudzbine:1" readonly><br>
-      <input type="text" id="korisnik" placeholder="Korisnik:"><br>
-      <input type="text" id="ime"   placeholder="Ime ili prezime:"><br>
-      <input type="text" id="brojtelefona" placeholder="Broj telefona:"><br>
-      <input type="text" id="ulica" placeholder="Ulica:"><br>
-      <input type="text" id="stan" placeholder="Stan:"><br>
-      <input type="text" id="sprat" placeholder="Sprat:"><br>
-      <input type="text" id="naselje" placeholder="Naselje:"><br>
-      <input type="text" id="interfon" placeholder="Interfon:"><br>
-      <input type="text" id="napomena" placeholder="Napomena:"><br>
-      <select id="lista1"class="lista" name="cards">
+    <a href="settings.html" class="settingsButton">Podesavanja</a>
+    <br>
+    <br>
+    <br>
+    <img src="dingdong.jpg" width="317" height="280">
+    <h1>Call centar</h1>
+    <input type="text" id="broj" value="Broj Porudzbine:1" readonly><br>
+    <input type="text" id="korisnik" placeholder="Korisnik:"><br>
+    <input type="text" id="ime" placeholder="Ime ili prezime:"><br>
+    <input type="text" id="brojtelefona" placeholder="Broj telefona:"><br>
+    <input type="text" id="ulica" placeholder="Ulica:"><br>
+    <input type="text" id="stan" placeholder="Stan:"><br>
+    <input type="text" id="sprat" placeholder="Sprat:"><br>
+    <input type="text" id="naselje" placeholder="Naselje:"><br>
+    <input type="text" id="interfon" placeholder="Interfon:"><br>
+    <input type="text" id="napomena" placeholder="Napomena:"><br>
+    <select id="lista1" class="lista" name="cards">
     </select>
-      <input type="text" id="vreme" width="500" placeholder="Vreme potrebno da porudzbina stigne:"><br>
-      <button id="button">Posalji</button>
-      <button onclick="logout()">Logout</button>
+    <input type="text" id="vreme" width="500" placeholder="Vreme potrebno da porudzbina stigne:"><br>
+    <button id="button">Posalji</button>
+    <button onclick="logout()">Logout</button>
   </div>
-    <br>
-    <br>
-    <div id="content_container">
-         <p class="header"> Porudzbine </p>
-         <select id="lista"class="lista" name="cards">
+  <br>
+  <br>
+  <div id="content_container">
+    <p class="header"> Porudzbine </p>
+    <select id="lista" class="lista" name="cards">
 
-        </select>
-         <div class="container">
-           <div class="task_container">
-                <div id="task_data" >
-                  <div id="task_korisnik" contenteditable="false"> </div>
-                  <div id="task_ulica" contenteditable="false"> </div>
-                  <div id="task_broj" contenteditable="false"></div>
-                  <div id="task_vreme" contenteditable="false"> </div>
-                  <div id="task_vremeporudzbine" contenteditable="false"></div>
-                  <div id="task_naselje" contenteditable="false"> </div>
-                  <div id="task_brojtelefon" contenteditable="false">  </div>
-                  <div id="task_ime" contenteditable="false">  </div>
-                  <div id="task_sprat" contenteditable="false">  </div>
-                  <div id="task_stan" contenteditable="false">  </div>
-                  <div id="task_interfon" contenteditable="false">  </div>
-                  <div id="task_napomena" contenteditable="false">  </div>
-                  <div id="task_zona" contenteditable="false">  </div>
-             </div>
-           </div>
-         </div>
+    </select>
+    <div class="container">
+      <div class="task_container">
+        <div id="task_data">
+          <div id="task_korisnik" contenteditable="false"> </div>
+          <div id="task_ulica" contenteditable="false"> </div>
+          <div id="task_broj" contenteditable="false"></div>
+          <div id="task_vreme" contenteditable="false"> </div>
+          <div id="task_vremeporudzbine" contenteditable="false"></div>
+          <div id="task_naselje" contenteditable="false"> </div>
+          <div id="task_brojtelefon" contenteditable="false"> </div>
+          <div id="task_ime" contenteditable="false"> </div>
+          <div id="task_sprat" contenteditable="false"> </div>
+          <div id="task_stan" contenteditable="false"> </div>
+          <div id="task_interfon" contenteditable="false"> </div>
+          <div id="task_napomena" contenteditable="false"> </div>
+          <div id="task_zona" contenteditable="false"> </div>
+        </div>
+      </div>
+    </div>
 
-         <div class="container">
-         </div>
-       </div>
-</div>
+    <div class="container">
+    </div>
+  </div>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyBUKflI4L3015j_hIBn_gxhQAczOowkY6E",
-    authDomain: "testno-okruzenje.firebaseapp.com",
-    databaseURL: "https://testno-okruzenje-default-rtdb.firebaseio.com",
-    projectId: "testno-okruzenje",
-    storageBucket: "testno-okruzenje.appspot.com",
-    messagingSenderId: "642758208405",
-    appId: "1:642758208405:web:237ff4ae199803d4fb649c"
+      apiKey: "AIzaSyBdsKfmCg6K3-JtgAC7nSM7zBUTG_HhQz4",
+      authDomain: "dingdong-77f20.firebaseapp.com",
+      databaseURL: "https://dingdong-77f20-default-rtdb.firebaseio.com",
+      projectId: "dingdong-77f20",
+      storageBucket: "dingdong-77f20.appspot.com",
+      messagingSenderId: "291969162724",
+      appId: "1:291969162724:web:4fee4a1fdd0752c1377bf1",
+      measurementId: "G-EJ7XF0N738"
     };
     firebase.initializeApp(config);
   </script>
 
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>
