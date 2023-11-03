@@ -72,7 +72,7 @@ function logout(){
        task_stan=task_array[i][10];
        task_vreme=task_array[i][11];
        task_vremeporudzbine=task_array[i][12];
-
+       task_zona=task_array[i][13];
 
        task_container = document.createElement("div");
        task_container.setAttribute("class", "task_container");
@@ -142,6 +142,11 @@ function logout(){
        vremeporudzbine.setAttribute('contenteditable', false);
        vremeporudzbine.innerHTML = task_vremeporudzbine;
 
+       zona = document.createElement('div');
+       zona.setAttribute('id', 'task_zona');
+       zona.setAttribute('contenteditable', false);
+       zona.innerHTML = task_zona;
+
        task_tool = document.createElement('div');
        task_tool.setAttribute('id', 'task_tool');
 
@@ -152,23 +157,27 @@ function logout(){
        fa_done.setAttribute('class', 'fa fa-check');
       
        zona1_button = document.createElement('button');
-       zona1_button.setAttribute('onclick', "task_zona1(this.parentElement.parentElement, this.parentElement)");
+       zona1_button.setAttribute('onclick', "updateZona(this.parentElement.parentElement, this.parentElement, 'Zona 1')");
+       zona1_button.setAttribute('class','zonaButton');
        fa_one = document.createElement('i');
        fa_one.innerHTML="Zona 1";
     
        zona2_button = document.createElement('button');
-       zona2_button.setAttribute('onclick', "task_zona2(this.parentElement.parentElement, this.parentElement)");
+       zona2_button.setAttribute('onclick', "updateZona(this.parentElement.parentElement, this.parentElement, 'Zona 2')");
+       zona2_button.setAttribute('class','zonaButton');
        fa_two = document.createElement('i');
        fa_two.innerHTML="Zona 2";
 
        zona3_button = document.createElement('button');
-       zona3_button.setAttribute('onclick', "task_zona2(this.parentElement.parentElement, this.parentElement)");
+       zona3_button.setAttribute('onclick', "updateZona(this.parentElement.parentElement, this.parentElement, 'Zona 3')");
+       zona3_button.setAttribute('class','zonaButton');
        fa_three = document.createElement('i');
        fa_three.innerHTML="Zona 3";
 
 
        unfinished_task_container.append(task_container);
        task_container.append(task_data);
+       task_data.append(zona);
        task_data.append(ime);
        task_data.append(ulica);
        task_data.append(brojtelefona);
@@ -180,7 +189,7 @@ function logout(){
        task_data.append(interfon);
        task_data.append(napomena);
        task_data.append(vreme);
-      task_data.append(vremeporudzbine);
+       task_data.append(vremeporudzbine);
        task_container.append(task_tool);
        task_tool.append(zona1_button);
        task_tool.append(zona2_button);
@@ -230,6 +239,15 @@ function logout(){
 
 }
 
+function updateZona(task, task_tool, zonaTekst){
+  var key = task.getAttribute("data-key");
+  firebase.database().ref("/Porudzbina/" + key).update({
+    zona:zonaTekst,
+    key:key,
+  });
+  create_unfinished_task();
+}
+
 let button=document.getElementById("button");
 var i=2;
 button.addEventListener("click",function(){
@@ -255,6 +273,7 @@ button.addEventListener("click",function(){
   let vreme=document.getElementById("vreme").value;
 
   let korisnik=document.getElementById("korisnik").value;
+  let zona='';
 
   var d = new Date();
   var sati = d.getHours();
@@ -283,6 +302,7 @@ button.addEventListener("click",function(){
       vreme:"Vreme potrebno da porudzbina stigne:"+vreme,
       korisnik:"Korisnik:"+korisnik,
       vremeporudzbine:"Vreme narucivanja:"+vremeporudzbine,
+      zona: zona,
       key:key
     };
     var updates = {};
