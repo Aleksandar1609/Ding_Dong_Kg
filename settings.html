@@ -8,36 +8,196 @@
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
     <script src="settings.js"></script>
+    <link rel="stylesheet" href="settingsStyle.css" />
     <title>Podesavanja za sajt</title>
 </head>
 
-<body>
+<body onload="settingPage()">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <label>RedWings:</label>
+            </div>
+            <div class="col-4">
                 <label>
-                    <input type="radio" name="restaurant1" onclick="handleRadioClick(this)" value="yes"> Yes
+                    <input type="radio" name="PFRW" onclick="handleRadioClick(this)" value="Yes"> Yes
                 </label>
+            </div>
+            <div class="col-4">
                 <label>
-                    <input type="radio" name="restaurant1" onclick="handleRadioClick(this)" value="no"> No
+                    <input type="radio" name="PFRW" onclick="handleRadioClick(this)" value="No"> No
                 </label>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <label>Pljeskovac:</label>
+            </div>
+            <div class="col-4">
                 <label>
-                    <input type="radio" name="restaurant2" onclick="handleRadioClick(this)" value="yes"> Yes
+                    <input type="radio" name="Pljeskovac" onclick="handleRadioClick(this)" value="Yes"> Yes
                 </label>
+            </div>
+            <div class="col-4">
                 <label>
-                    <input type="radio" name="restaurant2" onclick="handleRadioClick(this)" value="no"> No
+                    <input type="radio" name="Pljeskovac" onclick="handleRadioClick(this)" value="No"> No
                 </label>
             </div>
         </div>
-
         <div class="row">
-            <button onclick="updateSetings()">Update</button>
+            <div class="col-4">
+                <label>HoodFood:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="HoodFood" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="HoodFood" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>PinkPanter:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="PinkPanter" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="PinkPanter" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>PlaviBik:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="PlaviBik" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="PlaviBik" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>Vega:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Vega" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Vega " onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>MaliNapulj:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="MaliNapulj" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="MaliNapulj" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>Sunce:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Sunce" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Sunce" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>Andrea:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Andrea" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Andrea" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>EraFood:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="EraFood" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="EraFood" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>JKVill:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="JKVill" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="JKVill" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>Urban:</label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Urban" onclick="handleRadioClick(this)" value="Yes"> Yes
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <input type="radio" name="Urban" onclick="handleRadioClick(this)" value="No"> No
+                </label>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <button onclick="updateSetings()" class="zonaButton">Update</button>
         </div>
     </div>
 </body>
@@ -46,14 +206,13 @@
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBdsKfmCg6K3-JtgAC7nSM7zBUTG_HhQz4",
-    authDomain: "dingdong-77f20.firebaseapp.com",
-    databaseURL: "https://dingdong-77f20-default-rtdb.firebaseio.com",
-    projectId: "dingdong-77f20",
-    storageBucket: "dingdong-77f20.appspot.com",
-    messagingSenderId: "291969162724",
-    appId: "1:291969162724:web:4fee4a1fdd0752c1377bf1",
-    measurementId: "G-EJ7XF0N738"
+    apiKey: "AIzaSyBUKflI4L3015j_hIBn_gxhQAczOowkY6E",
+    authDomain: "testno-okruzenje.firebaseapp.com",
+    databaseURL: "https://testno-okruzenje-default-rtdb.firebaseio.com",
+    projectId: "testno-okruzenje",
+    storageBucket: "testno-okruzenje.appspot.com",
+    messagingSenderId: "642758208405",
+    appId: "1:642758208405:web:237ff4ae199803d4fb649c"
   };
   firebase.initializeApp(config);
 </script>

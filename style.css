@@ -59,7 +59,7 @@ body {
   margin: auto;
 }
 
-.main-div button:hover, .loggedin-div button:hover {
+.main-div button:hover, .loggedin-div button:hover, .zonaButton:hover {
   background: #fff;
   color: #1C2321;
   border: 1px solid #1C2321;
